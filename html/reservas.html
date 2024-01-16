@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- link tailwind -->
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>ACT 4</title>
+  </head>
+  <body onload="ponerNombre(), printReserves()">
+    
+    <div class="min-h-full">
+      <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <a href="../index.html"><img
+                  class="h-8 w-8"
+                  src="/img/icons8-hotel-de-5-estrellas-40.png"
+                  alt="logo hotel"
+                /></a>
+              </div>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <!-- <a
+                    href="/html/home.html"
+                    class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    aria-current="page"
+                    >Home</a
+                  >
+
+                  <a
+                    href="/html/rooms.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >Rooms</a
+                  >
+
+                  <a
+                    href="/html/calendar.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >Calendar</a
+                  > -->
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown dropdown-end">
+              <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                <div
+                  class="w-10 rounded-full ring ring-offset-base-100 ring-offset-2"
+                >
+                  <img src="/img/icons8-usuario-30 (1).png" />
+                </div>
+              </label>
+
+              <ul
+                tabindex="0"
+                class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                    <span id="n"></span>
+                </li>
+                <li><a onclick="logout()">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+     
+     
+      <!-- ALERTS SUCCESS -->
+      <!-- <div id="alertLogin" class="alert alert-success shadow-lg hidden">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>You have successfully log in!</span>
+        </div>
+      </div> -->
+
+      <!-- ALERT ERROR FECHA-->
+      <div id="alertError" class="alert alert-error shadow-lg hidden">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>You have put a wrong date!</span>
+        </div>
+      </div>
+
+      <!-- ALERTS WARNING -->
+      <div id="alertPassed" class="alert alert-warning shadow-lg hidden">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            <span>Data incorrect, the choosen data is empty or has already passed!</span>
+        </div>
+      </div>
+
+      
+    <!-- ALERTS WARNING -->
+    <!-- <div id="alertReserva" class="alert alert-success shadow-lg hidden">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>You have successfully book this room!</span>
+      </div>
+    </div> -->
+
+    <div class="toast toast-top toast-start hidden z-10" id="toastRoom">
+      <div class="alert alert-success">
+        <div>
+          <span>Room booked successfully.</span>
+        </div>
+      </div>
+    </div>
+
+
+
+      <header class="bg-white shadow">
+        <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900">My Books</h1>
+        </div>
+      </header>
+
+
+      <main>
+           <div id="printReserves"></div>
+      </main>
+    </div>
+
+
+  <!-- MODAL  -->
+  <div id="ponerModal"></div>
+
+    <!-- SCRIPTS -->
+    <script src="../js/act4.js"></script>
+  </body>
+</html>

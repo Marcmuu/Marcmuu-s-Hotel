@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- link tailwind -->
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>ACT 4</title>
+</head>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+      
+        html, body{
+          font-family: 'Roboto', sans-serif;
+        }
+      
+        .break-inside {
+          -moz-column-break-inside: avoid;
+          break-inside: avoid;
+        }
+        body {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          min-height: 100vh;
+          line-height: 1.5;
+        }
+        
+      </style>
+      <body class="bg-white">
+        <!-- ALERTS ERROR -->
+        <div id="alertDatos" class="alert alert-error shadow-lg hidden">
+          <div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Username or Password are in blank!</span>
+          </div>
+        </div>
+
+        <!-- ALERTS WARNING -->
+        <div id="alertExiste" class="alert alert-warning shadow-lg hidden">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              <span>Username already taken!</span>
+          </div>
+        </div>
+
+        <!-- Example -->
+        <div class="flex min-h-screen">
+          <!-- Container -->
+          <div class="flex flex-row w-full">     
+            <!-- Login -->
+            <div class="flex flex-1 flex-col items-center justify-center px-10 relative">
+              <!-- Login box -->
+              <div class="flex flex-1 flex-col  justify-center space-y-5 max-w-md">
+                <div class="flex flex-col space-y-2 text-center">
+                  <h2 class="text-3xl md:text-4xl font-bold">Create a new account</h2>
+                  <p class="text-md md:text-xl">Fill up all the gaps</p>
+                </div>
+                <div class="flex flex-col max-w-md space-y-5">
+                    <input name="signUser" id="signUser" type="text" placeholder="Username"
+                    class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal" />
+
+                    <input name="signPass" id="signPass" type="password" placeholder="Password"
+                    class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal" />
+
+                  <button name="signBtn" id="signBtn" class="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white" onclick="createUser()">Create account</button>
+                 
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+        <!-- Example -->
+
+
+
+    <!-- SCRIPTS -->
+    <script src="../js/act4.js"></script>
+</body>
+</html>
